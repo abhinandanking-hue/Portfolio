@@ -776,6 +776,18 @@ button, input, textarea, select {
   container-type: inline-size;
 }
 
+.timeline-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+.timeline-scroll:focus-visible {
+  outline: 2px solid rgba(146, 240, 202, 0.7);
+  outline-offset: 3px;
+}
+
 .timeline-wrap {
   --year-height: 68px;
   position: relative;
@@ -998,51 +1010,6 @@ button, input, textarea, select {
   color: rgba(255,255,255,0.54);
   letter-spacing: 0.04em;
   line-height: 1.25;
-}
-
-@container (max-width: 340px) {
-  .timeline-wrap {
-    display: block;
-  }
-
-  .timeline-wrap::before,
-  .timeline-years,
-  .duration-lane {
-    display: none;
-  }
-
-  .entries {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 4px;
-  }
-
-  .job-item,
-  .role-freelance,
-  .role-alchemy,
-  .role-intelliswift,
-  .role-appinees,
-  .role-techno-facts,
-  .role-accenture,
-  .role-earlier {
-    height: 142px;
-    min-height: 142px;
-    margin: 0;
-  }
-
-  .job-title {
-    font-size: 0.86rem;
-    line-height: 1.25;
-  }
-
-  .job-company-name {
-    font-size: 0.7rem;
-  }
-
-  .job-date {
-    font-size: 0.62rem;
-  }
 }
 
 .work-panel {
@@ -1731,44 +1698,7 @@ button, input, textarea, select {
 
   .timeline-wrap {
     --year-height: 68px;
-    grid-template-columns: 32px 18px minmax(0, 1fr);
-    column-gap: 6px;
-  }
-
-  .timeline-years {
-    grid-template-rows: repeat(20, var(--year-height));
-  }
-
-  .entries {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    grid-column: 1 / -1;
-    grid-row: auto;
-    padding-top: 4px;
-  }
-
-  .timeline-wrap {
-    display: block;
-  }
-
-  .timeline-wrap::before,
-  .timeline-years,
-  .duration-lane {
-    display: none;
-  }
-
-  .job-item,
-  .role-freelance,
-  .role-alchemy,
-  .role-intelliswift,
-  .role-appinees,
-  .role-techno-facts,
-  .role-accenture,
-  .role-earlier {
-    height: 142px;
-    min-height: 142px;
-    margin: 0;
+    min-width: 430px;
   }
 
   .job-title {
